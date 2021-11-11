@@ -15,8 +15,8 @@ public class ButtonScript : MonoBehaviour
     public GameObject AssignmentsGO;
     public GameObject UploadGO;
     public GameObject SubmitGO;
-
-
+    public GameObject Assignment5GO;
+    public GameObject QuizGO;
 
     //handles button presses
 
@@ -58,6 +58,9 @@ public class ButtonScript : MonoBehaviour
     }
     public void LoadAssignments()
     {
+        Assignment5GO.SetActive(false);
+        QuizGO.SetActive(false);
+
         UploadGO.SetActive(false);
         SubmitGO.SetActive(false);
         CourseGO.SetActive(false);
@@ -77,6 +80,9 @@ public class ButtonScript : MonoBehaviour
     //BACK TO MAIN COURSE SCREEN
     public void BackToCourse() //multiple uses
     {
+        Assignment5GO.SetActive(false);
+        QuizGO.SetActive(false);
+
         UploadGO.SetActive(false);
         SubmitGO.SetActive(false);
         AssignmentsGO.SetActive(false);
@@ -116,6 +122,8 @@ public class ButtonScript : MonoBehaviour
     //assignments
     public void UploadAssignment() //multiple uses
     {
+        QuizGO.SetActive(false);
+        Assignment5GO.SetActive(false);
         UploadGO.SetActive(false);
         SubmitGO.SetActive(true);
     }
