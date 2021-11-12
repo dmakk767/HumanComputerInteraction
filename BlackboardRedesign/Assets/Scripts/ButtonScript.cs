@@ -17,7 +17,25 @@ public class ButtonScript : MonoBehaviour
     public GameObject SubmitGO;
     public GameObject Assignment5GO;
     public GameObject QuizGO;
+    public GameObject Announce1GO;
+    public GameObject Announce2GO;
+    public GameObject Announce3GO;
+    public GameObject PostReplyGO;
+    public GameObject TEXTPostReplyGO;
+    public GameObject TEXTSubmitGO;
+    public GameObject TEXTJacobGO;
+    public GameObject TEXTPostDBGO;
 
+    public GameObject PostJacobScreenGO;
+    public GameObject SillybusGO;
+    public GameObject Assign5GO;
+    public GameObject ContactGO;
+    public GameObject disableME;
+
+    public void Start()
+    {
+        disableME.SetActive(false);
+    }
     //handles button presses
 
     //LOGIN SCREEN
@@ -60,7 +78,7 @@ public class ButtonScript : MonoBehaviour
     {
         Assignment5GO.SetActive(false);
         QuizGO.SetActive(false);
-
+        Assign5GO.SetActive(false);
         UploadGO.SetActive(false);
         SubmitGO.SetActive(false);
         CourseGO.SetActive(false);
@@ -80,9 +98,16 @@ public class ButtonScript : MonoBehaviour
     //BACK TO MAIN COURSE SCREEN
     public void BackToCourse() //multiple uses
     {
+        ContactGO.SetActive(false);
+        Assign5GO.SetActive(false);
+        SillybusGO.SetActive(false);
+        PostJacobScreenGO.SetActive(false);
         Assignment5GO.SetActive(false);
         QuizGO.SetActive(false);
-
+        Announce1GO.SetActive(false);
+        Announce2GO.SetActive(false);
+        Announce3GO.SetActive(false);
+        PostReplyGO.SetActive(false);
         UploadGO.SetActive(false);
         SubmitGO.SetActive(false);
         AssignmentsGO.SetActive(false);
@@ -99,6 +124,8 @@ public class ButtonScript : MonoBehaviour
     public void LoadDB() //multiple uses
     {
         DBNewGO.SetActive(false);
+        PostReplyGO.SetActive(false);
+        PostJacobScreenGO.SetActive(false);
 
         DBMainGO.SetActive(false);
         DBGO.SetActive(true);
@@ -109,6 +136,8 @@ public class ButtonScript : MonoBehaviour
     public void BacktoDBMain() //multiple uses
     {
         DBNewGO.SetActive(false);
+        PostReplyGO.SetActive(false);
+        PostJacobScreenGO.SetActive(false);
 
         DBGO.SetActive(false);
         DBMainGO.SetActive(true);
@@ -122,11 +151,89 @@ public class ButtonScript : MonoBehaviour
     //assignments
     public void UploadAssignment() //multiple uses
     {
+        Assign5GO.SetActive(false);
+
         QuizGO.SetActive(false);
         Assignment5GO.SetActive(false);
         UploadGO.SetActive(false);
         SubmitGO.SetActive(true);
     }
+    //load anouncements
+    public void LoadAnn1() 
+    {
+        CourseGO.SetActive(false);
+        Announce1GO.SetActive(true);
+    }
+    public void LoadAnn2()
+    {
+        CourseGO.SetActive(false);
+        Announce2GO.SetActive(true);
+    }
+    public void LoadAnn3()
+    {
+        CourseGO.SetActive(false);
+        Announce3GO.SetActive(true);
+    }
 
+    //post reply to thread in DB
+    public void LoadPostReply()
+    {
+        DBGO.SetActive(false);
+        PostReplyGO.SetActive(true);
+    }
+
+    //show text
+    public void ShowTextPost()
+    {
+        TEXTPostDBGO.SetActive(true);
+        TEXTPostReplyGO.SetActive(true);
+        TEXTSubmitGO.SetActive(true);
+        TEXTJacobGO.SetActive(true);
+        Invoke("HideTextPost", 3f);
+    }
+    public void HideTextPost()
+    {
+        TEXTPostReplyGO.SetActive(false);
+        TEXTSubmitGO.SetActive(false);
+        TEXTJacobGO.SetActive(false);
+        TEXTPostDBGO.SetActive(false);
+
+    }
+
+    //load JocobPost
+    public void LoadJacobPost()
+    {
+        DBGO.SetActive(false);
+        PostJacobScreenGO.SetActive(true);
+    }
+
+    //load assignment 5
+    public void LoadAssign5()
+    {
+        CourseGO.SetActive(false);
+        Assign5GO.SetActive(true);
+    }
+
+    //load quiz
+    public void LoadQuiz()
+    {
+        CourseGO.SetActive(false);
+        QuizGO.SetActive(true);
+    }
+
+    //load sillybus
+    public void LoadSillness()
+    {
+        CourseGO.SetActive(false);
+        SillybusGO.SetActive(true);
+    }
+
+    //load  contact info
+    public void LoadContact()
+    {
+        CourseGO.SetActive(false);
+        ContactGO.SetActive(true);
+    }
 
 }
+

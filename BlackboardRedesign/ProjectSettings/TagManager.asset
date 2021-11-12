@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Login
   - Courses
+  - Text
   layers:
   - Default
   - TransparentFX
