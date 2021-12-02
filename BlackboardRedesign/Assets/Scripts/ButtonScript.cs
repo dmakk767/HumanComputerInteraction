@@ -26,6 +26,9 @@ public class ButtonScript : MonoBehaviour
     public GameObject TEXTJacobGO;
     public GameObject TEXTPostDBGO;
 
+    public GameObject TEXTHelp;
+    public GameObject TEXTProfile;
+
     public GameObject PostJacobScreenGO;
     public GameObject SillybusGO;
     public GameObject Assign5GO;
@@ -119,6 +122,25 @@ public class ButtonScript : MonoBehaviour
         CourseGO.SetActive(true);
     }
 
+    //HELP BUTTON
+    public void LoadHelp() //multiple uses
+    {
+        //show the help text
+        TEXTHelp.SetActive(true);
+
+        //trun off the help text
+        Invoke("HideTextPost", 3f);
+
+    }
+
+    //PROFILE BUTTON
+    public void LoadProfile()
+    {
+        //show the text
+        TEXTProfile.SetActive(true);
+        //hide in a few seconds
+        Invoke("HideTextPost", 3f);
+    }
 
     //DB SCREEN
     public void LoadDB() //multiple uses
@@ -197,7 +219,8 @@ public class ButtonScript : MonoBehaviour
         TEXTSubmitGO.SetActive(false);
         TEXTJacobGO.SetActive(false);
         TEXTPostDBGO.SetActive(false);
-
+        TEXTHelp.SetActive(false);
+        TEXTProfile.SetActive(false);
     }
 
     //load JocobPost
